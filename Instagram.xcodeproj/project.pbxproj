@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2108332D286A563C00C99655 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108332C286A563C00C99655 /* LoginViewController.m */; };
+		21083330286A620700C99655 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108332F286A620700C99655 /* TimelineViewController.m */; };
 		215F60E0286A460F002DBB42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215F60DF286A460F002DBB42 /* AppDelegate.m */; };
 		215F60E3286A460F002DBB42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215F60E2286A460F002DBB42 /* SceneDelegate.m */; };
 		215F60E6286A460F002DBB42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215F60E5286A460F002DBB42 /* ViewController.m */; };
@@ -43,6 +45,10 @@
 		02693D233166F2F55FF095CF /* Pods-InstagramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.release.xcconfig"; sourceTree = "<group>"; };
 		1704594B127287073C6C0824 /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E7DD8419D7D37DDEA333D8A /* Pods-Instagram-InstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-InstagramUITests.debug.xcconfig"; path = "Target Support Files/Pods-Instagram-InstagramUITests/Pods-Instagram-InstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2108332B286A563C00C99655 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		2108332C286A563C00C99655 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		2108332E286A620700C99655 /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		2108332F286A620700C99655 /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		215F60DB286A460F002DBB42 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		215F60DE286A460F002DBB42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		215F60DF286A460F002DBB42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,10 +134,14 @@
 				215F60E4286A460F002DBB42 /* ViewController.h */,
 				215F60E5286A460F002DBB42 /* ViewController.m */,
 				215F60E7286A460F002DBB42 /* Main.storyboard */,
+				2108332B286A563C00C99655 /* LoginViewController.h */,
+				2108332C286A563C00C99655 /* LoginViewController.m */,
 				215F60EA286A4610002DBB42 /* Assets.xcassets */,
 				215F60EC286A4610002DBB42 /* LaunchScreen.storyboard */,
 				215F60EF286A4610002DBB42 /* Info.plist */,
 				215F60F0286A4610002DBB42 /* main.m */,
+				2108332E286A620700C99655 /* TimelineViewController.h */,
+				2108332F286A620700C99655 /* TimelineViewController.m */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -173,7 +183,6 @@
 				8DC9E634E4482E0D765A40F3 /* Pods-InstagramTests.debug.xcconfig */,
 				02693D233166F2F55FF095CF /* Pods-InstagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -419,6 +428,8 @@
 				215F60E0286A460F002DBB42 /* AppDelegate.m in Sources */,
 				215F60F1286A4610002DBB42 /* main.m in Sources */,
 				215F60E3286A460F002DBB42 /* SceneDelegate.m in Sources */,
+				2108332D286A563C00C99655 /* LoginViewController.m in Sources */,
+				21083330286A620700C99655 /* TimelineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
