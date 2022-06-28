@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TimelineViewController : UIViewController
 - (IBAction)didTapLogout:(id)sender;
+- (IBAction)didTapPhoto:(id)sender;
 
 @end
 

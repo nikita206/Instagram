@@ -32,11 +32,16 @@
 */
 
 
+- (IBAction)didTapPhoto:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"image"];
+    self.view.window.rootViewController = tabController;
+}
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        self.view.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
+                self.view.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"login"];
     }];
 }
 @end
