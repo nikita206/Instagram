@@ -11,14 +11,14 @@
 #import <Parse/Parse.h>
 
 @interface TimelineViewController ()
-
+@property (weak, nonatomic) NSMutableArray *arrayOfPosts;
 @end
 
 @implementation TimelineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self fetchPosts];
 }
 
 /*
@@ -31,6 +31,21 @@
 }
 */
 
+-(void) fetchPosts{
+    PFQuery *postQuery = [PFQuery queryWithClassName:@"Post"];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
+        if (posts) {
+            self.arrayOfPosts = posts;
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
 
 - (IBAction)didTapPhoto:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

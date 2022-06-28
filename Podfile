@@ -15,6 +15,7 @@ target 'Instagram' do
 
   target 'InstagramUITests' do
     # Pods for testing
+	pod 'Parse/UI'
   end
 
 end
