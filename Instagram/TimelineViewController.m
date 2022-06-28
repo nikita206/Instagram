@@ -13,6 +13,7 @@
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSArray *arrayOfPosts;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation TimelineViewController
@@ -22,6 +23,9 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.arrayOfPosts = [[NSMutableArray alloc] init];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
     [self fetchPosts];
 }
 
@@ -49,6 +53,7 @@
         else {
             NSLog(@"%@", error);
         }
+        [self.refreshControl endRefreshing];
     }];
 }
 
