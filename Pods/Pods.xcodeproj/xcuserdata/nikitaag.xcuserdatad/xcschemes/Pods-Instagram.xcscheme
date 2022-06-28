@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8D43E6275A1CF5733D31692A1828AE52"
-               BuildableName = "Pods_Instagram.framework"
+               BuildableName = "libPods-Instagram.a"
                BlueprintName = "Pods-Instagram"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

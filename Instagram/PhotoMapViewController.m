@@ -6,6 +6,7 @@
 //
 
 #import "PhotoMapViewController.h"
+#import "Post.h"
 
 @interface PhotoMapViewController ()
 
@@ -24,7 +25,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
     // Do something with the images (based on your use case)
-    UIImage *resizedImage = [self resizeImage:originalImage withSize:CGSizeMake(200,200)];
+    UIImage *resizedImage = [self resizeImage:originalImage withSize:CGSizeMake(500,500)];
     [self.image setImage:resizedImage];
     
     // Dismiss UIImagePickerController to go back to your original view controller
@@ -46,11 +47,23 @@
 }
 
 - (IBAction)shareButton:(id)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-    self.view.window.rootViewController = tabController;
+    
+    if(self.image.image && ![self.caption.text isEqualToString:@""]){
+        [Post postUserImage:self.image.image withCaption:self.caption.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"%@", error);
+            }
+            else{
+                NSLog(@"Awesome");
+                UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+                self.view.window.rootViewController = tabController;
+            }
+        }];
+    }
 }
 
+    
 - (IBAction)cancelButton:(id)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];

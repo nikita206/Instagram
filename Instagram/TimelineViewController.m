@@ -8,16 +8,20 @@
 #import "TimelineViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import <Parse/Parse.h>
+#import "Parse/Parse.h"
+#import "InstagramPostTableViewCell.h"
 
-@interface TimelineViewController ()
-@property (weak, nonatomic) NSMutableArray *arrayOfPosts;
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) NSArray *arrayOfPosts;
 @end
 
 @implementation TimelineViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.arrayOfPosts = [[NSMutableArray alloc] init];
     [self fetchPosts];
 }
 
@@ -37,14 +41,36 @@
     [postQuery includeKey:@"author"];
     postQuery.limit = 20;
 
-    [postQuery findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts) {
             self.arrayOfPosts = posts;
+            [self.tableView reloadData];
         }
         else {
-            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", error);
         }
     }];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    InstagramPostTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"postCell" forIndexPath:indexPath];
+    
+    
+    Post *post = self.arrayOfPosts[indexPath.row];
+    cell.post = post;
+    cell.author.text = post[@"author"][@"username"];
+    cell.username.text = post[@"author"][@"username"];
+    cell.caption.text = post[@"caption"];
+    
+    cell.likeCount.text = [NSString stringWithFormat:@"%@", post[@"likeCount"]];
+    cell.commentCount.text = [NSString stringWithFormat:@"%@", post[@"commentCount"]];
+    cell.photoImageView.file = post[@"image"];
+    [cell.photoImageView loadInBackground];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.arrayOfPosts.count;
 }
 
 - (IBAction)didTapPhoto:(id)sender {
