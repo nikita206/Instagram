@@ -9,10 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TimelineViewController : UIViewController
+@interface TimelineViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 - (IBAction)didTapLogout:(id)sender;
 - (IBAction)didTapPhoto:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 
 @end
 

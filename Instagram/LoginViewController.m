@@ -36,6 +36,7 @@
     }];
 }
 
+
 - (void)registerUser {
     // initialize a user object
     PFUser *newUser = [PFUser user];

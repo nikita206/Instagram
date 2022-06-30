@@ -80,19 +80,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_tab" translatesAutoresizingMaskIntoConstraints="NO" id="de2-gj-9Xk" customClass="PFImageView">
-                                <rect key="frame" x="154" y="62" width="121" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tm-MU-cD3">
-                                <rect key="frame" x="156" y="208" width="117" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit Profile"/>
-                                <connections>
-                                    <action selector="editProfile:" destination="68E-di-aft" eventType="touchUpInside" id="3II-rP-8zG"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zto-fm-uum">
                                 <rect key="frame" x="0.0" y="294" width="414" height="602"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -124,6 +111,17 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfO-Tz-kD6">
+                                <rect key="frame" x="140" y="215" width="133" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile_tab" translatesAutoresizingMaskIntoConstraints="NO" id="de2-gj-9Xk" customClass="PFImageView">
+                                <rect key="frame" x="143" y="52" width="129" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EY1-9d-jYI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -131,7 +129,8 @@
                     <navigationItem key="navigationItem" id="uXl-XJ-iXc"/>
                     <connections>
                         <outlet property="collectionView" destination="Zto-fm-uum" id="Swm-Iv-qFW"/>
-                        <outlet property="profilePic" destination="de2-gj-9Xk" id="he2-60-a4G"/>
+                        <outlet property="profilePic" destination="de2-gj-9Xk" id="KMN-uf-Ucq"/>
+                        <outlet property="username" destination="gfO-Tz-kD6" id="KN3-i6-MnW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b9x-AJ-V4T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -208,12 +207,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="448"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tZO-6f-wot" customClass="PFImageView">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZO-6f-wot" customClass="PFImageView">
                                             <rect key="frame" x="0.0" y="34.5" width="414" height="343"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="343" id="A6m-j4-GKM"/>
-                                                <constraint firstAttribute="width" constant="414" id="jn1-L9-mQe"/>
-                                            </constraints>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGi-eb-CM8">
                                             <rect key="frame" x="148" y="399" width="258" height="38"/>
@@ -270,14 +266,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="k0P-6f-tmU" firstAttribute="leading" secondItem="gZV-VQ-cpG" secondAttribute="leading" constant="12" id="PBk-05-9PX"/>
-                                        <constraint firstItem="tZO-6f-wot" firstAttribute="top" secondItem="k0P-6f-tmU" secondAttribute="bottom" constant="8" symbolic="YES" id="U0e-D7-wFs"/>
                                         <constraint firstItem="k0P-6f-tmU" firstAttribute="top" secondItem="gZV-VQ-cpG" secondAttribute="top" constant="6" id="fXk-iP-u1c"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstItem="tZO-6f-wot" firstAttribute="leading" secondItem="UBL-Op-K58" secondAttribute="leading" id="BdD-uC-7Ij"/>
-                                    <constraint firstAttribute="trailing" secondItem="tZO-6f-wot" secondAttribute="trailing" id="j5x-di-RMB"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="author" destination="k0P-6f-tmU" id="OJ2-2L-Q0z"/>
                                     <outlet property="caption" destination="XGi-eb-CM8" id="yC1-kH-Ngz"/>
@@ -379,7 +370,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40A-Om-vB8">
-                                        <rect key="frame" x="312" y="8" width="38" height="21"/>
+                                        <rect key="frame" x="205" y="0.0" width="178" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
