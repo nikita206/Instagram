@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *commentCount;
 - (IBAction)tapLike:(id)sender;
 - (IBAction)tapFavorite:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *timeAgo;
+@property (weak, nonatomic) IBOutlet PFImageView *pfp;
+
 
 
 @property (strong, nonatomic) Post *post;

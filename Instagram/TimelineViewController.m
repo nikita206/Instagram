@@ -69,10 +69,15 @@
     cell.author.text = post[@"author"][@"username"];
     cell.username.text = post[@"author"][@"username"];
     cell.caption.text = post[@"caption"];
+    NSDate *createdAt = post.createdAt;
+    cell.timeAgo.text = [NSString stringWithFormat:@"%@", createdAt.shortTimeAgoSinceNow];
     cell.likeCount.text = [NSString stringWithFormat:@"%@", post[@"likeCount"]];
     cell.commentCount.text = [NSString stringWithFormat:@"%@", post[@"commentCount"]];
     cell.photoImageView.file = post[@"image"];
     [cell.photoImageView loadInBackground];
+    cell.pfp.file = post[@"author"][@"profileImage"];
+    [cell.pfp loadInBackground];
+    
     return cell;
 }
 
