@@ -18,9 +18,11 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     [self fetchPosts];
-    self.username.text = user[@"author"];
+    self.author.text = user.username;
     self.profilePic.file = user[@"profileImage"];
     [self.profilePic loadInBackground];
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width/2;
+    self.profilePic.clipsToBounds = YES;
     UITapGestureRecognizer *profileTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPhoto)];
     [self.profilePic addGestureRecognizer:profileTap];
     [self.profilePic setUserInteractionEnabled:YES];
@@ -80,9 +82,9 @@
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize screenSize = UIScreen.mainScreen.bounds.size;
-    //screenSize.width
+    CGFloat width = screenSize.width/3;
     
-    return CGSizeMake(200, 200);
+    return CGSizeMake(width, 150);
 }
 
 /*

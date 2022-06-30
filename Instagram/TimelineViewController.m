@@ -12,6 +12,7 @@
 #import "InstagramPostTableViewCell.h"
 #import "PostViewController.h"
 #import "DateTools.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSArray *arrayOfPosts;
@@ -19,7 +20,6 @@
 @end
 
 @implementation TimelineViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.dataSource = self;
@@ -77,9 +77,12 @@
     [cell.photoImageView loadInBackground];
     cell.pfp.file = post[@"author"][@"profileImage"];
     [cell.pfp loadInBackground];
+    cell.pfp.layer.cornerRadius = cell.pfp.frame.size.width/2;
+    cell.pfp.clipsToBounds = YES;
     
     return cell;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.arrayOfPosts.count;

@@ -11,7 +11,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    UITapGestureRecognizer *profileTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPic)];
+    [self.pfp addGestureRecognizer:profileTap];
+    [self.pfp setUserInteractionEnabled:YES];
+}
+
+-(void) didTapPic{
+    NSLog(@"tippy tippy tap");
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -26,6 +33,7 @@
 // self.photoImageView.file = post[@"image"];
 //    [imageView loadInBackground];
 }
+
 
 - (IBAction)tapFavorite:(id)sender {
 }
