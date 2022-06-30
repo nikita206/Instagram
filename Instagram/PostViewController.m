@@ -21,7 +21,8 @@
     self.postImage.file = self.post[@"image"];
     [self.postImage loadInBackground];
     self.caption.text = self.post[@"caption"];
-    
+    NSDate *createdAt = self.post.createdAt;
+    self.timeStamp.text = [NSString stringWithFormat:@"%@", createdAt];
     self.likeCount.text = [NSString stringWithFormat:@"%@", self.post[@"likeCount"]];
     self.commentCount.text = [NSString stringWithFormat:@"%@", self.post[@"commentCount"]];
     // Do any additional setup after loading the view.

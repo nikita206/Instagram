@@ -15,6 +15,9 @@
 		21083336286ACA4A00C99655 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 21083335286ACA4A00C99655 /* Post.m */; };
 		21083339286B7B3F00C99655 /* InstagramPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21083338286B7B3F00C99655 /* InstagramPostTableViewCell.m */; };
 		2108333F286CB9A100C99655 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108333E286CB9A100C99655 /* PostViewController.m */; };
+		21083342286CF73300C99655 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21083341286CF73300C99655 /* ProfileViewController.m */; };
+		21083345286CF8DA00C99655 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21083344286CF8DA00C99655 /* EditProfileViewController.m */; };
+		21083348286D101E00C99655 /* PostViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21083347286D101E00C99655 /* PostViewCell.m */; };
 		215F60E0286A460F002DBB42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215F60DF286A460F002DBB42 /* AppDelegate.m */; };
 		215F60E3286A460F002DBB42 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 215F60E2286A460F002DBB42 /* SceneDelegate.m */; };
 		215F60E6286A460F002DBB42 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 215F60E5286A460F002DBB42 /* ViewController.m */; };
@@ -60,6 +63,12 @@
 		21083338286B7B3F00C99655 /* InstagramPostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramPostTableViewCell.m; sourceTree = "<group>"; };
 		2108333D286CB9A100C99655 /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		2108333E286CB9A100C99655 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		21083340286CF73300C99655 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		21083341286CF73300C99655 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		21083343286CF8DA00C99655 /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		21083344286CF8DA00C99655 /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		21083346286D101E00C99655 /* PostViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewCell.h; sourceTree = "<group>"; };
+		21083347286D101E00C99655 /* PostViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewCell.m; sourceTree = "<group>"; };
 		215F60DB286A460F002DBB42 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		215F60DE286A460F002DBB42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		215F60DF286A460F002DBB42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,6 +155,8 @@
 				215F60E4286A460F002DBB42 /* ViewController.h */,
 				215F60E5286A460F002DBB42 /* ViewController.m */,
 				215F60E7286A460F002DBB42 /* Main.storyboard */,
+				21083343286CF8DA00C99655 /* EditProfileViewController.h */,
+				21083344286CF8DA00C99655 /* EditProfileViewController.m */,
 				21083337286B7B3F00C99655 /* InstagramPostTableViewCell.h */,
 				21083338286B7B3F00C99655 /* InstagramPostTableViewCell.m */,
 				21083331286A753100C99655 /* PhotoMapViewController.h */,
@@ -162,6 +173,10 @@
 				21083335286ACA4A00C99655 /* Post.m */,
 				2108333D286CB9A100C99655 /* PostViewController.h */,
 				2108333E286CB9A100C99655 /* PostViewController.m */,
+				21083340286CF73300C99655 /* ProfileViewController.h */,
+				21083341286CF73300C99655 /* ProfileViewController.m */,
+				21083346286D101E00C99655 /* PostViewCell.h */,
+				21083347286D101E00C99655 /* PostViewCell.m */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -451,7 +466,10 @@
 				2108333F286CB9A100C99655 /* PostViewController.m in Sources */,
 				215F60E3286A460F002DBB42 /* SceneDelegate.m in Sources */,
 				21083333286A753100C99655 /* PhotoMapViewController.m in Sources */,
+				21083348286D101E00C99655 /* PostViewCell.m in Sources */,
 				2108332D286A563C00C99655 /* LoginViewController.m in Sources */,
+				21083345286CF8DA00C99655 /* EditProfileViewController.m in Sources */,
+				21083342286CF73300C99655 /* ProfileViewController.m in Sources */,
 				21083330286A620700C99655 /* TimelineViewController.m in Sources */,
 				21083336286ACA4A00C99655 /* Post.m in Sources */,
 			);
@@ -627,6 +645,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KB9CYZ548;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -654,6 +673,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KB9CYZ548;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -713,8 +733,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1E7DD8419D7D37DDEA333D8A /* Pods-Instagram-InstagramUITests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KB9CYZ548;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaag.InstagramUITests;
@@ -729,8 +751,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9CC04C671D7E52DD998798AC /* Pods-Instagram-InstagramUITests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KB9CYZ548;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nikitaag.InstagramUITests;
