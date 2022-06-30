@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (IBAction)didTapPhoto:(id)sender;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) BOOL isMoreDataLoading;
+@property (weak, nonatomic) IBOutlet UILabel *timeAgo;
 
 @end
 

@@ -19,6 +19,8 @@
     self.collectionView.delegate = self;
     [self fetchPosts];
     self.username.text = user[@"author"];
+    self.profilePic.file = user[@"profileImage"];
+    [self.profilePic loadInBackground];
     UITapGestureRecognizer *profileTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapPhoto)];
     [self.profilePic addGestureRecognizer:profileTap];
     [self.profilePic setUserInteractionEnabled:YES];

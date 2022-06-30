@@ -7,6 +7,7 @@
 
 #import "PostViewController.h"
 #import "TimelineViewController.h"
+#import "DateTools.h"
 
 
 @interface PostViewController ()
@@ -22,7 +23,7 @@
     [self.postImage loadInBackground];
     self.caption.text = self.post[@"caption"];
     NSDate *createdAt = self.post.createdAt;
-    self.timeStamp.text = [NSString stringWithFormat:@"%@", createdAt];
+    self.timeStamp.text = [NSString stringWithFormat:@"%@", createdAt.shortTimeAgoSinceNow];
     self.likeCount.text = [NSString stringWithFormat:@"%@", self.post[@"likeCount"]];
     self.commentCount.text = [NSString stringWithFormat:@"%@", self.post[@"commentCount"]];
     // Do any additional setup after loading the view.

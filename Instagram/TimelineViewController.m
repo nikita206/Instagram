@@ -11,6 +11,7 @@
 #import "Parse/Parse.h"
 #import "InstagramPostTableViewCell.h"
 #import "PostViewController.h"
+#import "DateTools.h"
 
 @interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) NSArray *arrayOfPosts;
@@ -68,7 +69,6 @@
     cell.author.text = post[@"author"][@"username"];
     cell.username.text = post[@"author"][@"username"];
     cell.caption.text = post[@"caption"];
-    
     cell.likeCount.text = [NSString stringWithFormat:@"%@", post[@"likeCount"]];
     cell.commentCount.text = [NSString stringWithFormat:@"%@", post[@"commentCount"]];
     cell.photoImageView.file = post[@"image"];
