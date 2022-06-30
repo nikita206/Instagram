@@ -7,6 +7,7 @@
 
 #import "PhotoMapViewController.h"
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 @interface PhotoMapViewController ()
 
@@ -47,7 +48,7 @@
 }
 
 - (IBAction)shareButton:(id)sender {
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     if(self.image.image && ![self.caption.text isEqualToString:@""]){
         [Post postUserImage:self.image.image withCaption:self.caption.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if (error) {
@@ -59,6 +60,7 @@
                 UITabBarController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
                 self.view.window.rootViewController = tabController;
             }
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
         }];
     }
 }

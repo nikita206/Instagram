@@ -9,6 +9,7 @@ target 'Instagram' do
   pod 'Parse'
   pod 'Parse/UI'
  pod 'DateTools'
+pod 'MBHUD'
   
   
   target 'InstagramTests' do
